@@ -1,0 +1,21 @@
+name: 'C4Builder'
+
+author: 'Haralan Dobrev <@hkdobrev> | Clippings'
+
+description: 'Run C4Builder to generate documentation website from Markdown and C4 PlantUML files'
+
+inputs:
+  path:
+    description: 'Path to C4Builder configuration file, source and dist'
+    default: '.'
+    required: false
+
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    C4BUILDER_CONFIG_PATH: ${{ inputs.config_path }}
+
+branding:
+  color: 'green'
+  icon: 'book'
