@@ -1,6 +1,6 @@
 # C4builder GitHub Action
 
-Runs C4Builder in GitHub Actions to generate a documentation website.
+Run [C4Builder](https://adrianvlupu.github.io/C4-Builder/) in GitHub Actions to generate a documentation website from Markdown and PlantUML files.
 
 ## Usage
 
@@ -8,10 +8,10 @@ Put the following step in your workflow:
 
 ```yml
       - name: C4Builder
-        uses: clippings/c4builder-action@master
+        uses: clippings/c4builder-action@v1
 ```
 
-Example:
+Workflow example:
 
 ```yml
 name: Build
@@ -19,7 +19,9 @@ name: Build
 on:
   pull_request:
     types: [open, synchronize]
-  push: ~
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -34,9 +36,10 @@ jobs:
 
 ## Configuration
 
-The only available configuration is the path where the `.c4builder` file is located. Defaults to the root of your repoository.
+The only available configuration is the path where the `.c4builder` file is located.
+Defaults to the root of your repoository.
 
-You can change it like that:
+You can change it via the `path` input like this:
 
 ```yml
 jobs:
@@ -52,7 +55,7 @@ jobs:
           path: 'doc/architecture'
 ```
 
-All the remaining configuration like
+All the remaining configuration like source and destination folder is read from your C4Builder configuration file found in the `path`.
 
 ## License
 
