@@ -6,7 +6,7 @@ description: 'Run C4Builder to generate documentation website from Markdown and 
 
 inputs:
   path:
-    description: 'Path to C4Builder configuration file, source and dist'
+    description: 'Path to directory with C4Builder configuration file'
     default: '.'
     required: false
 
@@ -14,7 +14,7 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    C4BUILDER_CONFIG_PATH: ${{ inputs.config_path }}
+    C4BUILDER_CONFIG_PATH: ${{ inputs.path }}
 
 branding:
   color: 'green'
