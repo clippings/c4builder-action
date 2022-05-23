@@ -37,7 +37,7 @@ jobs:
 ## Configuration
 
 The only available configuration is the path where the `.c4builder` file is located.
-Defaults to the root of your repoository.
+Defaults to the root of your repository.
 
 You can change it via the `path` input like this:
 
