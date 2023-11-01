@@ -10,8 +10,7 @@ RUN apk update && apk upgrade && \
       harfbuzz@edge \
       freetype@edge \
       ttf-freefont@edge \
-      openjdk8-jre \
-      graphviz
+      openjdk8-jre
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_SKIP_DOWNLOAD true
