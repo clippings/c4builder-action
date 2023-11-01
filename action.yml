@@ -14,7 +14,7 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    C4BUILDER_CONFIG_PATH: ${{ inputs.config_path }}
+    C4BUILDER_CONFIG_PATH: ${{ inputs.path }}
 
 branding:
   color: 'green'
